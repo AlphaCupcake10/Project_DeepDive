@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -48,13 +48,13 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -126,10 +126,10 @@ TextureImporter:
       name: PlayerRunGlow_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 754
-        width: 6
-        height: 10
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d88628d2c67b7c4e8a19f33b06fb207
-      internalID: 1917804792
+      spriteID: cc00cd860182d6548a7e2a6b71aa02ff
+      internalID: -311553037
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       name: PlayerRunGlow_1
       rect:
         serializedVersion: 2
-        x: 164
-        y: 754
-        width: 6
-        height: 10
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b7c422f4d7bba84a8b624467ab5f347
-      internalID: 2101499444
+      spriteID: b8c63a699eba80244a88375f2a97b98a
+      internalID: 439420320
       vertices: []
       indices: 
       edges: []
@@ -168,10 +168,10 @@ TextureImporter:
       name: PlayerRunGlow_2
       rect:
         serializedVersion: 2
-        x: 294
-        y: 754
-        width: 6
-        height: 8
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e7ad6b879135024baffbf76ad93ab93
-      internalID: -766280335
+      spriteID: ec30acb221669764798d9d509eb642c6
+      internalID: 83319246
       vertices: []
       indices: 
       edges: []
@@ -189,10 +189,10 @@ TextureImporter:
       name: PlayerRunGlow_3
       rect:
         serializedVersion: 2
-        x: 424
-        y: 752
-        width: 6
-        height: 10
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63852a03b8284294c910e0286582560a
-      internalID: 877195807
+      spriteID: ca68332604d579c46aae01ef748bc2fd
+      internalID: 1447417125
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,10 @@ TextureImporter:
       name: PlayerRunGlow_4
       rect:
         serializedVersion: 2
-        x: 554
-        y: 754
-        width: 6
-        height: 10
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 674d20377a65b5c479cc2956e12911af
-      internalID: 1834481268
+      spriteID: 8f53e132656de274e90d3731bebd4c1f
+      internalID: 1358844451
       vertices: []
       indices: 
       edges: []
@@ -231,10 +231,10 @@ TextureImporter:
       name: PlayerRunGlow_5
       rect:
         serializedVersion: 2
-        x: 684
-        y: 754
-        width: 6
-        height: 10
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd6b3e8b37556a844aec65bfe09c8f96
-      internalID: 823128506
+      spriteID: 7c78072b524d1ca44858a401fb1e7f8b
+      internalID: 606803205
       vertices: []
       indices: 
       edges: []
@@ -252,10 +252,10 @@ TextureImporter:
       name: PlayerRunGlow_6
       rect:
         serializedVersion: 2
-        x: 36
-        y: 624
-        width: 6
-        height: 10
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2bbba4a3b20549429f9d3e5365bb620
-      internalID: 115537657
+      spriteID: e50c1b44aaf4c2f45981de9a56739b3e
+      internalID: 1018408240
       vertices: []
       indices: 
       edges: []
@@ -273,10 +273,10 @@ TextureImporter:
       name: PlayerRunGlow_7
       rect:
         serializedVersion: 2
-        x: 166
-        y: 624
-        width: 6
-        height: 10
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aac6a67547c39147b00ca488155ae4e
-      internalID: 879267578
+      spriteID: 3cf56f8172aee0841939754e791c7f87
+      internalID: -1831186294
       vertices: []
       indices: 
       edges: []
@@ -294,10 +294,10 @@ TextureImporter:
       name: PlayerRunGlow_8
       rect:
         serializedVersion: 2
-        x: 296
-        y: 624
-        width: 6
-        height: 10
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,575 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c677bc43526decd429ef83f850d305cc
-      internalID: 1674868526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_9
-      rect:
-        serializedVersion: 2
-        x: 428
-        y: 624
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4d9d791ffdd2894ba7345ea3e90a1bb
-      internalID: -1018954203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_10
-      rect:
-        serializedVersion: 2
-        x: 556
-        y: 624
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7ed3a09247b68741adefd7d2f06887f
-      internalID: -597211473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_11
-      rect:
-        serializedVersion: 2
-        x: 686
-        y: 624
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d28ce21002fcd7458333e110262be98
-      internalID: -1910196153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_12
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 494
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 982cc69b87d80b840933d36dc7b94296
-      internalID: 429194649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_13
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 494
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4dbd168d87f6f84480457e2e9bcdb97
-      internalID: -1164635323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_14
-      rect:
-        serializedVersion: 2
-        x: 294
-        y: 494
-        width: 6
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f991ff4a33f14c9459a5a085ecf1a086
-      internalID: -517199489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_15
-      rect:
-        serializedVersion: 2
-        x: 424
-        y: 494
-        width: 6
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bcc29f8301356448bfcb8437f7a15a5
-      internalID: 158709204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_16
-      rect:
-        serializedVersion: 2
-        x: 554
-        y: 494
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9e93dfd619c36f46b90e102a41281ed
-      internalID: 1436398957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_17
-      rect:
-        serializedVersion: 2
-        x: 686
-        y: 494
-        width: 4
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14263ec6e61b3a14baf4f848b87e2b51
-      internalID: 969003255
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_18
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 364
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ecb9a90d97c6a645b2b466f99b06f49
-      internalID: 1074050784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_19
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 364
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 021af80a081a0274aa1ff01916116466
-      internalID: -743018013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_20
-      rect:
-        serializedVersion: 2
-        x: 294
-        y: 362
-        width: 4
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd86942b482301649b64636af3e73fa1
-      internalID: 672581649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_21
-      rect:
-        serializedVersion: 2
-        x: 424
-        y: 362
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f36564075b1384645926f1ad12b6e418
-      internalID: -513022018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_22
-      rect:
-        serializedVersion: 2
-        x: 554
-        y: 362
-        width: 6
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd5b06db2c844c14b954423c8c44e226
-      internalID: -1493470010
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_23
-      rect:
-        serializedVersion: 2
-        x: 684
-        y: 364
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 576106d1de33d7b4ea3a77332e08b2a8
-      internalID: -1234947912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_24
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 234
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f09c42707bfa79549ad96c79efbdaae9
-      internalID: 57340439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_25
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 234
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90aa6e7b30187fc43b06e602382a5339
-      internalID: 877098602
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_26
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 234
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4672685cde856a42a723d3a5d170271
-      internalID: -42528529
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_27
-      rect:
-        serializedVersion: 2
-        x: 428
-        y: 234
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 784a860e709f76049ba6d0b7f37462e5
-      internalID: -755173458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_28
-      rect:
-        serializedVersion: 2
-        x: 556
-        y: 234
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eaae6db8a619ed4da3b1ac3fba5fd8b
-      internalID: 790478948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_29
-      rect:
-        serializedVersion: 2
-        x: 686
-        y: 234
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4952ff913ae8ce34ebc8616e10ddfc70
-      internalID: -1489623936
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_30
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 104
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0faa1cf46ad840344b2207a84f6047b4
-      internalID: 1879041238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_31
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 104
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38bcafc7e70a50b4d91d43bf51af1bdd
-      internalID: -224735571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_32
-      rect:
-        serializedVersion: 2
-        x: 294
-        y: 106
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf9e46d37b4a1c648878f1010a16336c
-      internalID: 1337750251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_33
-      rect:
-        serializedVersion: 2
-        x: 424
-        y: 106
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf96642fd5c36da42a13c84032f9355a
-      internalID: -25988261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_34
-      rect:
-        serializedVersion: 2
-        x: 554
-        y: 104
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e4ef11ca5281694498b539a2975e865
-      internalID: 352624091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerRunGlow_35
-      rect:
-        serializedVersion: 2
-        x: 684
-        y: 104
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a8662086e036e0418b30e61326742bd
-      internalID: 915942715
+      spriteID: 9b6a220d66982af49b136d5ae463c429
+      internalID: 147994696
       vertices: []
       indices: 
       edges: []
@@ -889,42 +322,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerRunGlow_0: 1917804792
-      PlayerRunGlow_1: 2101499444
-      PlayerRunGlow_10: -597211473
-      PlayerRunGlow_11: -1910196153
-      PlayerRunGlow_12: 429194649
-      PlayerRunGlow_13: -1164635323
-      PlayerRunGlow_14: -517199489
-      PlayerRunGlow_15: 158709204
-      PlayerRunGlow_16: 1436398957
-      PlayerRunGlow_17: 969003255
-      PlayerRunGlow_18: 1074050784
-      PlayerRunGlow_19: -743018013
-      PlayerRunGlow_2: -766280335
-      PlayerRunGlow_20: 672581649
-      PlayerRunGlow_21: -513022018
-      PlayerRunGlow_22: -1493470010
-      PlayerRunGlow_23: -1234947912
-      PlayerRunGlow_24: 57340439
-      PlayerRunGlow_25: 877098602
-      PlayerRunGlow_26: -42528529
-      PlayerRunGlow_27: -755173458
-      PlayerRunGlow_28: 790478948
-      PlayerRunGlow_29: -1489623936
-      PlayerRunGlow_3: 877195807
-      PlayerRunGlow_30: 1879041238
-      PlayerRunGlow_31: -224735571
-      PlayerRunGlow_32: 1337750251
-      PlayerRunGlow_33: -25988261
-      PlayerRunGlow_34: 352624091
-      PlayerRunGlow_35: 915942715
-      PlayerRunGlow_4: 1834481268
-      PlayerRunGlow_5: 823128506
-      PlayerRunGlow_6: 115537657
-      PlayerRunGlow_7: 879267578
-      PlayerRunGlow_8: 1674868526
-      PlayerRunGlow_9: -1018954203
+      PlayerRunGlow_0: -311553037
+      PlayerRunGlow_1: 439420320
+      PlayerRunGlow_2: 83319246
+      PlayerRunGlow_3: 1447417125
+      PlayerRunGlow_4: 1358844451
+      PlayerRunGlow_5: 606803205
+      PlayerRunGlow_6: 1018408240
+      PlayerRunGlow_7: -1831186294
+      PlayerRunGlow_8: 147994696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
