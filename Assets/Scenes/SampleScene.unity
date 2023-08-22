@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 47912675}
   - component: {fileID: 47912677}
-  - component: {fileID: 47912676}
+  - component: {fileID: 47912678}
   m_Layer: 0
   m_Name: Graphic
   m_TagString: Untagged
@@ -156,27 +156,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2114925952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &47912676
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47912674}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 69167c1dc14114043938f5c392e5c790, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &47912677
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -218,17 +197,38 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1537866695, guid: 840feb9303ad2ad40a7a26c913c100a0, type: 3}
+  m_Sprite: {fileID: 1487350385, guid: 840feb9303ad2ad40a7a26c913c100a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 60, y: 33.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &47912678
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47912674}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f71987a3f0d422d48b2f13a3a5a49f89, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &160762269
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +519,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 1.6770834
+  orthographic size: 3.545
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 64
+  m_AssetsPPU: 100
   m_RefResolutionX: 320
   m_RefResolutionY: 180
   m_CropFrame: 0
@@ -1009,8 +1009,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.17
   m_LocalBounds:
-    m_Center: {x: 0.008599997, y: -0.0010499954, z: 0}
-    m_Extent: {x: 3.0698, y: 3.06845, z: 0}
+    m_Center: {x: 0.0028500557, y: -0.0034000874, z: 0}
+    m_Extent: {x: 3.06535, y: 3.0676, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1119,8 +1119,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.17
   m_LocalBounds:
-    m_Center: {x: 0.00074994564, y: -0.00014996529, z: 0}
-    m_Extent: {x: 3.07225, y: 3.06695, z: 0}
+    m_Center: {x: -0.0018999577, y: -0.0016000271, z: 0}
+    m_Extent: {x: 3.075, y: 3.0737, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1318,9 +1318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3dfdf30fd9dbb49b522e1f5bbc66d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  controller: {fileID: 2114925951}
-  animator: {fileID: 47912676}
+  speed: 30
+  animator: {fileID: 47912678}
 --- !u!114 &2114925951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,9 +1332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548ddaa750007fc48ad7688a8a600174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SlideFactor: 2
+  m_slideStarted: 0
   m_JumpForce: 100
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
+  m_CrouchSpeed: 0.33
+  m_MovementSmoothing: 0.1455
   m_AirControl: 0
   m_WhatIsGround:
     serializedVersion: 2

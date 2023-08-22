@@ -2,50 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController2D))]
 public class PlayerMovement : MonoBehaviour
 {
-  public float speed = 4f;
+    public float speed = 4f;
+    CharacterController2D controller;
+    float horizontalMove = 0f;
+    bool isJumping = false;
 
-  public CharacterController2D controller;
+    bool isCrouching = false;
 
-  public Animator animator;
+    public Animator animator;
 
-  float horizontalMove = 0f;
-  bool isJumping = false;
-
-  bool isCrouching = false;
-
-  void Update()
-  {
-    horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
-
-    animator.SetFloat("speed", Mathf.Abs(horizontalMove));
-
-    if(Input.GetButtonDown("Jump"))
+    void Start()
     {
-      isJumping = true;
+        controller = GetComponent<CharacterController2D>();
     }
 
-    if(Input.GetButtonDown("Crouch"))
+    void Update()
     {
-      isCrouching = true;
-    } else if(Input.GetButtonUp("Crouch"))
-    {
-      isCrouching = false;
+        horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            isJumping = true;
+        }
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+        }
+
+        if (Input.GetButtonDown("Crouch"))
+        {
+            isCrouching = true;
+        }
+        else if (Input.GetButtonUp("Crouch"))
+        {
+            isCrouching = false;
+        }
+
+        animator.SetFloat("Speed",Mathf.Abs(controller.getXVelocity()));
+        animator.SetBool("isCrouching",isCrouching || controller.isSliding());
+        animator.SetBool("isGrounded",controller.isGrounded());
+        
     }
-  }
 
-  public void OnLanding()
-  {
-    animator.SetBool("isJumping", isJumping);
+    public void OnLanding()
+    {
+        
+    }
 
-    isJumping = false;
-  }
-
-  void FixedUpdate()
-  {
-    controller.Move(horizontalMove * Time.fixedDeltaTime, isCrouching, isJumping);
-
-    animator.SetBool("isCrouching", isCrouching);
-  }
+    void FixedUpdate()
+    {
+        controller.Move(horizontalMove * Time.fixedDeltaTime, isCrouching, isJumping);
+    }
 }
