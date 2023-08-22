@@ -15,7 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
     public AnimatorOverrideController[] animationControllers;
-    public int state = 0;
+    [Range(0,3)]
+    int state = 0;
 
     void Start()
     {
@@ -53,9 +54,9 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    public void OnLanding()
+    public void setState(int value)
     {
-        
+        state = value;
     }
 
     void FixedUpdate()
