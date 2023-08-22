@@ -68,5 +68,5 @@ Material:
     m_Floats:
     - _NormalStrength: 1
     m_Colors:
-    - _Color: {r: 0, g: 3.1686687, b: 9.734287, a: 0}
+    - _Color: {r: 0.36525738, g: 1.3881636, b: 2.670157, a: 0}
   m_BuildTextureStacks: []

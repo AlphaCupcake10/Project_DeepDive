@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 640
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,11 +127,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 32
-        height: 32
+        y: 1920
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Zombie1Diffuse_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
+        x: 640
+        y: 1920
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: Zombie1Diffuse_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
+        x: 1280
+        y: 1920
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: Zombie1Diffuse_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
+        x: 1920
+        y: 1920
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: Zombie1Diffuse_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 96
-        width: 32
-        height: 32
+        x: 2560
+        y: 1920
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: Zombie1Diffuse_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 96
-        width: 32
-        height: 32
+        x: 3200
+        y: 1920
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: Zombie1Diffuse_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
-        width: 32
-        height: 32
+        x: 3840
+        y: 1920
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: Zombie1Diffuse_7
       rect:
         serializedVersion: 2
-        x: 224
-        y: 96
-        width: 32
-        height: 32
+        x: 4480
+        y: 1920
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -295,11 +295,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 32
-        height: 32
+        y: 1280
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,12 +315,12 @@ TextureImporter:
       name: Zombie1Diffuse_9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
+        x: 640
+        y: 1280
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,12 +336,12 @@ TextureImporter:
       name: Zombie1Diffuse_10
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
+        x: 1280
+        y: 1280
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -357,12 +357,12 @@ TextureImporter:
       name: Zombie1Diffuse_11
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
+        x: 1920
+        y: 1280
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -378,12 +378,12 @@ TextureImporter:
       name: Zombie1Diffuse_12
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
-        height: 32
+        x: 2560
+        y: 1280
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -399,12 +399,12 @@ TextureImporter:
       name: Zombie1Diffuse_13
       rect:
         serializedVersion: 2
-        x: 160
-        y: 64
-        width: 32
-        height: 32
+        x: 3200
+        y: 1280
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -420,12 +420,12 @@ TextureImporter:
       name: Zombie1Diffuse_14
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
-        width: 32
-        height: 32
+        x: 3840
+        y: 1280
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -441,12 +441,12 @@ TextureImporter:
       name: Zombie1Diffuse_15
       rect:
         serializedVersion: 2
-        x: 224
-        y: 64
-        width: 32
-        height: 32
+        x: 4480
+        y: 1280
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -463,11 +463,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
+        y: 640
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -483,12 +483,12 @@ TextureImporter:
       name: Zombie1Diffuse_17
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
+        x: 640
+        y: 640
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -504,12 +504,12 @@ TextureImporter:
       name: Zombie1Diffuse_18
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
+        x: 1280
+        y: 640
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -525,12 +525,12 @@ TextureImporter:
       name: Zombie1Diffuse_19
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
+        x: 1920
+        y: 640
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -546,12 +546,12 @@ TextureImporter:
       name: Zombie1Diffuse_20
       rect:
         serializedVersion: 2
-        x: 128
-        y: 32
-        width: 32
-        height: 32
+        x: 2560
+        y: 640
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -567,12 +567,12 @@ TextureImporter:
       name: Zombie1Diffuse_21
       rect:
         serializedVersion: 2
-        x: 160
-        y: 32
-        width: 32
-        height: 32
+        x: 3200
+        y: 640
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -588,12 +588,12 @@ TextureImporter:
       name: Zombie1Diffuse_22
       rect:
         serializedVersion: 2
-        x: 192
-        y: 32
-        width: 32
-        height: 32
+        x: 3840
+        y: 640
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -609,12 +609,12 @@ TextureImporter:
       name: Zombie1Diffuse_23
       rect:
         serializedVersion: 2
-        x: 224
-        y: 32
-        width: 32
-        height: 32
+        x: 4480
+        y: 640
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -632,10 +632,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -651,12 +651,12 @@ TextureImporter:
       name: Zombie1Diffuse_25
       rect:
         serializedVersion: 2
-        x: 32
+        x: 640
         y: 0
-        width: 32
-        height: 32
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -672,12 +672,12 @@ TextureImporter:
       name: Zombie1Diffuse_26
       rect:
         serializedVersion: 2
-        x: 64
+        x: 1280
         y: 0
-        width: 32
-        height: 32
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -693,12 +693,12 @@ TextureImporter:
       name: Zombie1Diffuse_27
       rect:
         serializedVersion: 2
-        x: 96
+        x: 1920
         y: 0
-        width: 32
-        height: 32
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -714,12 +714,12 @@ TextureImporter:
       name: Zombie1Diffuse_28
       rect:
         serializedVersion: 2
-        x: 128
+        x: 2560
         y: 0
-        width: 32
-        height: 32
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -735,12 +735,12 @@ TextureImporter:
       name: Zombie1Diffuse_29
       rect:
         serializedVersion: 2
-        x: 160
+        x: 3200
         y: 0
-        width: 32
-        height: 32
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -756,12 +756,12 @@ TextureImporter:
       name: Zombie1Diffuse_30
       rect:
         serializedVersion: 2
-        x: 192
+        x: 3840
         y: 0
-        width: 32
-        height: 32
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -777,12 +777,12 @@ TextureImporter:
       name: Zombie1Diffuse_31
       rect:
         serializedVersion: 2
-        x: 224
+        x: 4480
         y: 0
-        width: 32
-        height: 32
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

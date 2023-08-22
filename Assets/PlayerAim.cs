@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerAim : MonoBehaviour
 {
-    Vector3 MousePosition = Vector2.zero;
+    Vector2 MousePosition = Vector2.zero;
     public float angle = 0; 
     PlayerMovement playerMovement;
     // Start is called before the first frame update
@@ -17,8 +17,8 @@ public class PlayerAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 diff = MousePosition - transform.position;
+        MousePosition = (Input.mousePosition);
+        Vector2 diff = MousePosition - new Vector2(Screen.width/2,Screen.height/2);
 
         angle = Mathf.Atan2(diff.y,Mathf.Abs(diff.x))*Mathf.Rad2Deg;
 
