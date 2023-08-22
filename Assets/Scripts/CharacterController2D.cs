@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+	[SerializeField] private float m_SlideThreshold = 25;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[SerializeField] private float m_SlideFactor = 3;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[SerializeField] private bool m_slideStarted = false;
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
@@ -65,15 +66,14 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
-		float threshold = Mathf.Max(Mathf.Abs(move),1) * m_CrouchSpeed;
-		if(m_Grounded && crouch && Mathf.Abs(m_Rigidbody2D.velocity.x) > threshold && !m_slideStarted)
+		if(m_Grounded && crouch && Mathf.Abs(m_Rigidbody2D.velocity.x) > Mathf.Max(Mathf.Abs(move),m_SlideThreshold) * m_CrouchSpeed && !m_slideStarted)
 		{
 			m_slideStarted = true;
 		}
 
 		if(m_slideStarted)
 		{
-			if(!m_Grounded || Mathf.Abs(m_Rigidbody2D.velocity.x) < threshold)
+			if(!m_Grounded || Mathf.Abs(m_Rigidbody2D.velocity.x) < Mathf.Max(Mathf.Abs(move),3) * m_CrouchSpeed)
 			{
 				m_slideStarted = false;
 			}

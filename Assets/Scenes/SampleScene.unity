@@ -519,7 +519,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3.545
+  orthographic size: 1.996732
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 100
+  m_AssetsPPU: 51
   m_RefResolutionX: 320
   m_RefResolutionY: 180
   m_CropFrame: 0
@@ -1009,8 +1009,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.17
   m_LocalBounds:
-    m_Center: {x: 0.0028500557, y: -0.0034000874, z: 0}
-    m_Extent: {x: 3.06535, y: 3.0676, z: 0}
+    m_Center: {x: -0.0010999441, y: -0.005800009, z: 0}
+    m_Extent: {x: 3.0672998, y: 3.0659, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1119,8 +1119,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.17
   m_LocalBounds:
-    m_Center: {x: -0.0018999577, y: -0.0016000271, z: 0}
-    m_Extent: {x: 3.075, y: 3.0737, z: 0}
+    m_Center: {x: 0.0001500845, y: 0.0060499907, z: 0}
+    m_Extent: {x: 3.06645, y: 3.06995, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1320,6 +1320,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   animator: {fileID: 47912678}
+  animationControllers:
+  - {fileID: 22100000, guid: f8af5d38a3716614381ee7c941e93e54, type: 2}
+  - {fileID: 22100000, guid: 167d11352e647c1409efe08efa008928, type: 2}
+  - {fileID: 22100000, guid: 7ac73312b7fb14345992da79741f4b95, type: 2}
+  - {fileID: 22100000, guid: 2b0177b91a0b08245b911100206df8c9, type: 2}
+  state: 0
 --- !u!114 &2114925951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1332,9 +1338,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548ddaa750007fc48ad7688a8a600174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SlideFactor: 2
+  m_SlideThreshold: 10
+  m_SlideFactor: 3
   m_slideStarted: 0
-  m_JumpForce: 100
+  m_JumpForce: 125
   m_CrouchSpeed: 0.33
   m_MovementSmoothing: 0.1455
   m_AirControl: 0

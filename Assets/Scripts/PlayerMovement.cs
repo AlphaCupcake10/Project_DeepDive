@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 [RequireComponent(typeof(CharacterController2D))]
 public class PlayerMovement : MonoBehaviour
@@ -13,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     bool isCrouching = false;
 
     public Animator animator;
+    public AnimatorOverrideController[] animationControllers;
+    public int state = 0;
 
     void Start()
     {
@@ -41,9 +44,12 @@ public class PlayerMovement : MonoBehaviour
             isCrouching = false;
         }
 
+        animator.runtimeAnimatorController = animationControllers[state];
+
         animator.SetFloat("Speed",Mathf.Abs(controller.getXVelocity()));
         animator.SetBool("isCrouching",isCrouching || controller.isSliding());
         animator.SetBool("isGrounded",controller.isGrounded());
+        animator.SetBool("isSliding",controller.isSliding());
         
     }
 
