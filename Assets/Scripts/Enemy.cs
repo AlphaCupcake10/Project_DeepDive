@@ -43,15 +43,27 @@ public class Enemy : MonoBehaviour
   {
     if(distance.magnitude < detectionRadius && distance.magnitude > moveThreshold)
     {
-      animator.SetFloat("speed", Mathf.Abs(distance.normalized.x));
-      controller.Move(distance.normalized.x * speed * Time.fixedDeltaTime, false, false);
+      RaycastHit2D hit = Physics2D.Raycast(transform.position, distance.normalized, detectionRadius);
+
+      Debug.DrawRay(transform.position, distance.normalized * detectionRadius, Color.red);
+
+      print(hit.collider);
+
+      if(hit.collider == null)
+      {
+        animator.SetFloat("speed", Mathf.Abs(distance.normalized.x));
+        controller.Move(distance.normalized.x * speed * Time.fixedDeltaTime, false, false);
+      }
+      else
+      {
+        animator.SetFloat("speed", 0);
+        controller.Move(0, false, false);
+      }
     }
     else
     {
       animator.SetFloat("speed", 0);
       controller.Move(0, false, false);
     }
-
-    
   }
 }
