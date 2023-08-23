@@ -8,7 +8,8 @@ public class Enemy : MonoBehaviour
 
   CharacterController2D controller;
 
-  Vector2 distance;
+  public Vector2 distance;
+
 
   public Animator animator;
 
@@ -50,5 +51,7 @@ public class Enemy : MonoBehaviour
       animator.SetFloat("speed", 0);
       controller.Move(0, false, false);
     }
+
+    
   }
 }
