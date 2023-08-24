@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 
   public Vector2 distance;
 
+  public float maxHealth = 100f;
 
   public Animator animator;
 
@@ -17,6 +18,10 @@ public class Enemy : MonoBehaviour
   public float detectionRadius = 10f;
 
   public float speed = 1f;
+
+  public bool isDead = false;
+
+  public LayerMask collisionMask;
 
   Rigidbody2D rb;
 
@@ -43,7 +48,7 @@ public class Enemy : MonoBehaviour
   {
     if(distance.magnitude < detectionRadius && distance.magnitude > moveThreshold)
     {
-      RaycastHit2D hit = Physics2D.Raycast(transform.position, distance.normalized, detectionRadius);
+      RaycastHit2D hit = Physics2D.Raycast(transform.position, distance.normalized, detectionRadius, collisionMask);
 
       Debug.DrawRay(transform.position, distance.normalized * detectionRadius, Color.red);
 
@@ -51,8 +56,16 @@ public class Enemy : MonoBehaviour
 
       if(hit.collider != null)
       {
-        animator.SetFloat("speed", Mathf.Abs(distance.normalized.x));
-        controller.Move(distance.normalized.x * speed * Time.fixedDeltaTime, false, false);
+        if(hit.collider.gameObject.tag == "Player")
+        {
+          animator.SetFloat("speed", Mathf.Abs(distance.normalized.x));
+          controller.Move(distance.normalized.x * speed * Time.fixedDeltaTime, false, false);
+        }
+        else
+        {
+          animator.SetFloat("speed", 0);
+          controller.Move(0, false, false);
+        }
       }
       else
       {
@@ -64,6 +77,28 @@ public class Enemy : MonoBehaviour
     {
       animator.SetFloat("speed", 0);
       controller.Move(0, false, false);
+    }
+
+    if(isDead)
+    {
+      animator.SetBool("isDead", true);
+      if(animator.GetCurrentAnimatorStateInfo(0).IsName("death") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+      {
+        Destroy(gameObject, 30f);
+        Destroy(this);
+        Destroy(GetComponent<Collider2D>());
+        Destroy(rb);
+        Destroy(controller);
+      }
+    }
+  }
+
+  public void TakeDamage(float damage)
+  {
+    maxHealth -= damage;
+    if(maxHealth <= 0)
+    {
+      isDead = true;
     }
   }
 }
