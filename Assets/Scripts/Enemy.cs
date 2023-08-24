@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
 
       print(hit.collider);
 
-      if(hit.collider == null)
+      if(hit.collider != null)
       {
         animator.SetFloat("speed", Mathf.Abs(distance.normalized.x));
         controller.Move(distance.normalized.x * speed * Time.fixedDeltaTime, false, false);
