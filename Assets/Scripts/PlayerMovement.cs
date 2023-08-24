@@ -61,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(Input.GetButton("Fire3"))horizontalMove *= 0.01f*speed;
         controller.Move(horizontalMove * Time.fixedDeltaTime, isCrouching, isJumping);
     }
 }
