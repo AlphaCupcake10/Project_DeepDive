@@ -354,7 +354,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 836931355383619479, guid: d33f32f455a766e429aad306db80e190, type: 3}
       propertyPath: orthographic size
-      value: 4.0456867
+      value: 1.859375
       objectReference: {fileID: 0}
     - target: {fileID: 836931355383619479, guid: d33f32f455a766e429aad306db80e190, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
