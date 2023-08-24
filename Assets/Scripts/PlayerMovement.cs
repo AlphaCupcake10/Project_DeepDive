@@ -59,6 +59,11 @@ public class PlayerMovement : MonoBehaviour
         state = value;
     }
 
+    public int getState()
+    {
+        return state;
+    }
+
     void FixedUpdate()
     {
         if(Input.GetButton("Fire3"))horizontalMove *= 0.01f*speed;
