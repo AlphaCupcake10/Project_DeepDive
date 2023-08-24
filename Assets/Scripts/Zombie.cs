@@ -9,9 +9,15 @@ public class ZombieAttack : MonoBehaviour
   float lastAttackTime = 0f;
   public Animator animator;
 
+  public float damagePerHit = 10f;
+
+  GameObject player;
+
   void Start()
   {
     enemy = GetComponent<Enemy>();
+
+    player = FindObjectOfType<GameManager>().player;
   }
 
   void FixedUpdate()
@@ -35,10 +41,12 @@ public class ZombieAttack : MonoBehaviour
       {
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("ZombieAttack") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
+          ApplyDamage();
           animator.SetBool("isAttack", false);
         }
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("ZombieKick") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
+          ApplyDamage();
           animator.SetBool("isKick", false);
         }
       }
@@ -52,6 +60,6 @@ public class ZombieAttack : MonoBehaviour
 
   void ApplyDamage()
   {
-    // apply damage to player
+    player.GetComponent<PlayerHealth>().TakeDamage(damagePerHit);
   }
 }
