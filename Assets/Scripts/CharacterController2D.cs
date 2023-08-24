@@ -15,9 +15,9 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
 
-	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+	const float k_GroundedRadius = .05f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
-	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+	const float k_CeilingRadius = .05f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
@@ -63,9 +63,10 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
-
-	public void Move(float move, bool crouch, bool jump)
+	bool crouch = false;
+	public void Move(float move, bool crouchInput, bool jump)
 	{
+		crouch = crouchInput;
 		if(m_Grounded && crouch && Mathf.Abs(m_Rigidbody2D.velocity.x) > Mathf.Max(Mathf.Abs(move),m_SlideThreshold) * m_CrouchSpeed && !m_slideStarted)
 		{
 			m_slideStarted = true;
@@ -87,6 +88,7 @@ public class CharacterController2D : MonoBehaviour
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
 			{
 				crouch = true;
+				jump = false;
 			}
 		}
 
@@ -165,6 +167,10 @@ public class CharacterController2D : MonoBehaviour
 	public bool isGrounded()
 	{
 		return m_Grounded;
+	}
+	public bool isCrouching()
+	{
+		return crouch;
 	}
 	public bool isSliding()
 	{

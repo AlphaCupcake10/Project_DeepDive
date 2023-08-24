@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         animator.runtimeAnimatorController = animationControllers[state];
 
         animator.SetFloat("Speed",Mathf.Abs(controller.getXVelocity()));
-        animator.SetBool("isCrouching",isCrouching || controller.isSliding());
+        animator.SetBool("isCrouching",controller.isCrouching() || controller.isSliding());
         animator.SetBool("isGrounded",controller.isGrounded());
         animator.SetBool("isSliding",controller.isSliding());
         
