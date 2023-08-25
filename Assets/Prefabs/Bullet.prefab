@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2885204012490736038}
   - component: {fileID: 5240448805785979285}
   - component: {fileID: 4901352809718465207}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3092386285984317991}
   - component: {fileID: 3104120926096523862}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.06
+  m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
