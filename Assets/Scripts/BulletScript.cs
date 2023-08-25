@@ -5,6 +5,7 @@ using UnityEngine;
 public class bulletscript : MonoBehaviour
 {  
     public GameObject Particle;
+    public GameObject Trail;
     private void OnCollisionEnter2D(Collision2D col)
     {
         ContactPoint2D contact = col.contacts[0];
@@ -19,5 +20,7 @@ public class bulletscript : MonoBehaviour
         particle.transform.up = contact.normal;
         Destroy(particle,5);
         Destroy(gameObject);
+        Trail.transform.SetParent(Trail.transform.parent.parent);
+        Destroy(Trail,10);
     }
 }

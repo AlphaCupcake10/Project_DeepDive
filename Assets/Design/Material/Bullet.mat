@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: Bullet
   m_Shader: {fileID: -6465566751694194690, guid: e6c11c91579a77c45af19f16aa03a14a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -68,5 +68,5 @@ Material:
     m_Floats:
     - _NormalStrength: 1
     m_Colors:
-    - _Color: {r: 2.163154, g: 8.221084, b: 15.813399, a: 0}
+    - _Color: {r: 1.8431245, g: 3.4793215, b: 5.5189614, a: 0}
   m_BuildTextureStacks: []
