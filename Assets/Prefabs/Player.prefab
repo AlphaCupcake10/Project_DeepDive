@@ -491,8 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4718605076077215247, guid: aca90f42f494b8b45983248251cc933d, type: 3}
   shootfrom: {fileID: 4377047628834427250}
-  speed: 10
-  destroytime: 5
+  Gun: {fileID: 11400000, guid: 1460dbf70d8df5b47ae363c30ba18bb5, type: 2}
 --- !u!1 &2752258758486066871
 GameObject:
   m_ObjectHideFlags: 0

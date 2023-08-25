@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletscript : MonoBehaviour
+public class BulletScript : MonoBehaviour
 {  
     public GameObject Particle;
+    float Damage = 10;
+    float NormalForce = 10;
     public GameObject Trail;
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -12,15 +14,36 @@ public class bulletscript : MonoBehaviour
         Enemy enemy = col.collider.GetComponent<Enemy>();
         if(enemy != null)
         {
-            enemy.TakeDamage(25f);
+            enemy.TakeDamage(Damage);
         }
-        
+
+        Rigidbody2D rb = col.collider.GetComponent<Rigidbody2D>();
+
+        if(rb != null)
+        {
+            rb.AddForce(contact.normal * -NormalForce);
+        }
+
         GameObject particle = Instantiate(Particle);
         particle.transform.position = contact.point;
         particle.transform.up = contact.normal;
         Destroy(particle,5);
+        DestroyBullet();
+    }
+    public void DestroyBullet(float time)
+    {
+        Invoke("DestroyBullet",time);
+    }
+    public void DestroyBullet()
+    {
         Destroy(gameObject);
-        Trail.transform.SetParent(Trail.transform.parent.parent);
+        if(Trail)Trail.transform.SetParent(Trail.transform.parent.parent);
+        Trail = null;
         Destroy(Trail,10);
+    }
+    public void Set(float damage,float normalForce)
+    {
+        Damage = damage;
+        NormalForce = normalForce;
     }
 }
