@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
   public Vector2 distance;
 
-  public float maxHealth = 100f;
+  [SerializeField] float maxHealth = 100f,health=100f;
 
   public Animator animator;
 
@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
 
   Rigidbody2D rb;
 
+  [SerializeField] Enemy_healthbar ehealthbar;
+
   void Start()
   {
     playerManager = FindObjectOfType<GameManager>();
@@ -34,6 +36,8 @@ public class Enemy : MonoBehaviour
     rb = GetComponent<Rigidbody2D>();
 
     distance = (playerManager.player.transform.position - transform.position);
+
+    ehealthbar=GetComponentInChildren<Enemy_healthbar>();
   }
 
   void Update()
@@ -94,6 +98,7 @@ public class Enemy : MonoBehaviour
   public void TakeDamage(float damage)
   {
     maxHealth -= damage;
+    ehealthbar.HealthInBar(maxHealth,health);
     if(maxHealth <= 0)
     {
       isDead = true;
