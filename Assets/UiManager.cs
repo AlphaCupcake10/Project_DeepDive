@@ -17,6 +17,8 @@ public class UiManager : MonoBehaviour
         health = gameManager.player.GetComponent<PlayerHealth>();
         if(DeathScreen)
             DeathScreen.SetActive(false);
+        if(PauseMenu)
+            PauseMenu.SetActive(false);
     }
 
     void Update()

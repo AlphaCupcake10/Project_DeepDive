@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
   public GameObject player;
   public static GameManager Instance;
   int GameState = 0;
+  public Transform CheckPoint;
   void Awake()
   {
     Instance = this;
@@ -29,8 +30,13 @@ public class GameManager : MonoBehaviour
   public void ResetToLastCheckPoint()
   {
     TimeManager.Instance?.SetTimeScale(1);
-    print("Teleport");
+    player.transform.position = CheckPoint.position;
     SetGameState(0);
+  }
+
+  public void SetCheckPoint(Transform point)
+  {
+    CheckPoint = point;
   }
 
   public void TogglePause()
