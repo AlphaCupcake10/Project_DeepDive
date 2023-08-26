@@ -149,7 +149,7 @@ public class EnemyAttack : MonoBehaviour
 
   void ApplyDamage()
   {
-    player.GetComponent<PlayerHealth>().TakeDamage(damagePerHit);
-    // player.GetComponent<PlayerHealth>().TakeDamage(damagePerHit,transform.right*transform.localScale.x);
+    // player.GetComponent<PlayerHealth>().TakeDamage(damagePerHit);
+    player.GetComponent<PlayerHealth>().TakeDamage(damagePerHit,transform.right*transform.localScale.x);
   }
 }

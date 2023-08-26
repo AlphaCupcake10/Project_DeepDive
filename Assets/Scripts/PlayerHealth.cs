@@ -6,19 +6,23 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-  public Canvas canvas;
   public float maxHealth = 100f;
 
   public float currentHealth;
-
+  public float KnockBackForce = 100;
+  Rigidbody2D rb;
   void Start()
   {
     currentHealth = maxHealth;
+    rb = GetComponent<Rigidbody2D>();
   }
 
-  public void TakeDamage(float damage)
+  public void TakeDamage(float damage,Vector3 right)
   {
     currentHealth -= damage;
+
+    rb.AddForce(KnockBackForce*(Vector3.up+right));
+
     if(currentHealth <= 0)
     {
       Die();
@@ -27,7 +31,13 @@ public class PlayerHealth : MonoBehaviour
 
   public void Die()
   {
-    canvas.enabled=true;
-    print("You died!");
+    GameManager.Instance.HandleDeath();
+    currentHealth = maxHealth;
   }
+
+  public float GetHealthRatio()
+  {
+    return currentHealth/maxHealth;
+  }
+
 }

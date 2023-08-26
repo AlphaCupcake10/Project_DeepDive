@@ -18,6 +18,7 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
+        if(GameManager.Instance?.GetGameState() != 0)return;
         for(int i = 0 ; i < Main.FireModes.Length ; i ++)
             CheckShoot(Main,i);
     }

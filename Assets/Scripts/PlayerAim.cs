@@ -23,6 +23,7 @@ public class PlayerAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.Instance?.GetGameState() != 0)return;
         if(inputMode == InputType.mouse)
         {
             Debug.Log("ASD");
