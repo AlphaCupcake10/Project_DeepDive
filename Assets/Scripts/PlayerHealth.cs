@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class PlayerHealth : MonoBehaviour
 {
+  public Canvas canvas;
   public float maxHealth = 100f;
 
   public float currentHealth;
@@ -24,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
   public void Die()
   {
+    canvas.enabled=true;
     print("You died!");
   }
 }

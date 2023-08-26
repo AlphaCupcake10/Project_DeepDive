@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
 
   Rigidbody2D rb;
 
-  [SerializeField] Enemy_healthbar ehealthbar;
+  // [SerializeField] Enemy_healthbar ehealthbar;
 
   void Start()
   {
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
 
     distance = (playerManager.player.transform.position - transform.position);
 
-    ehealthbar=GetComponentInChildren<Enemy_healthbar>();
+    // ehealthbar=GetComponentInChildren<Enemy_healthbar>();
   }
 
   void Update()
@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
   public void TakeDamage(float damage)
   {
     maxHealth -= damage;
-    ehealthbar.HealthInBar(maxHealth,health);
+    // ehealthbar.HealthInBar(maxHealth,health);
     if(maxHealth <= 0)
     {
       isDead = true;
