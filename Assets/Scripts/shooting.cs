@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    Rigidbody2D RB;
     public GameObject bullet;
     public GameObject shootfrom;
     public GunConfig Main;
+    public SpriteRenderer sprite;
+
+    void Start()
+    {
+        RB = GetComponent<Rigidbody2D>();
+        sprite.sprite = Main.graphic;
+    }
 
     void Update()
     {
@@ -20,7 +28,10 @@ public class Shooting : MonoBehaviour
         {
             if (Input.GetMouseButton(mode))
             {
-                Shoot(Gun,mode);
+                for(int i = 0 ; i < Gun.FireModes[mode].Count ; i ++)
+                {
+                    Shoot(Gun,mode);
+                }
                 Gun.FireModes[mode].CurrentTimer = 0;
             }
         }
@@ -37,7 +48,9 @@ public class Shooting : MonoBehaviour
         Rigidbody2D bulletRigidbody = newBullet.GetComponent<Rigidbody2D>();
         if (bulletRigidbody != null)
         {
-            bulletRigidbody.velocity = shootfrom.transform.right * Gun.FireModes[mode].Speed * (transform.localScale.x);
+            Vector2 direction = ((Vector2)shootfrom.transform.right + Random.insideUnitCircle * Gun.FireModes[mode].Spray) * (transform.localScale.x);
+            bulletRigidbody.velocity = direction * Gun.FireModes[mode].Speed;
+            RB.AddForce(-direction * Gun.FireModes[mode].RecoilForce);
         }
         BulletScript bulletScript = newBullet.GetComponent<BulletScript>();
         if(bulletScript)
@@ -50,6 +63,8 @@ public class Shooting : MonoBehaviour
     public void SetGun(GunConfig gun)
     {
         Main = gun;
+        if(CameraZoom.Instance)CameraZoom.Instance.SetZoom(gun.zoom);
+        sprite.sprite = gun.graphic;
     }
     public GunConfig GetGun()
     {

@@ -80,6 +80,18 @@ public class CharacterController2D : MonoBehaviour
 	bool crouch = false;
 	public void Move(float move, bool crouchInput, bool jump)
 	{
+		// If the input is moving the player right and the player is facing left...
+		if (move > 0 && !m_FacingRight)
+		{
+			// ... flip the player.
+			Flip();
+		}
+		// Otherwise if the input is moving the player left and the player is facing right...
+		else if (move < 0 && m_FacingRight)
+		{
+			// ... flip the player.
+			Flip();
+		}
 		crouch = crouchInput;
 		if(m_Grounded && crouch && Mathf.Abs(m_Rigidbody2D.velocity.x) > Mathf.Max(Mathf.Abs(move),m_SlideThreshold) * m_CrouchSpeed && !m_slideStarted)
 		{
@@ -139,19 +151,6 @@ public class CharacterController2D : MonoBehaviour
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_slideStarted?m_SlideFactor:m_MovementSmoothing);
-
-			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !m_FacingRight)
-			{
-				// ... flip the player.
-				Flip();
-			}
-			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (move < 0 && m_FacingRight)
-			{
-				// ... flip the player.
-				Flip();
-			}
 		}
 
 		if(m_AirControl && !m_Grounded)

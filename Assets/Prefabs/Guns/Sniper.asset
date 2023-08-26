@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 197bb879e9548384187c7f98860c6086, type: 3}
-  m_Name: Pistol
+  m_Name: Sniper
   m_EditorClassIdentifier: 
-  graphic: {fileID: 21300000, guid: 79ab319e619b2ef41b34fe128615dafd, type: 3}
+  graphic: {fileID: 21300000, guid: 15c6866c17e573244985e562f1230313, type: 3}
+  zoom: 2
   FireModes:
-  - FireTimer: 0.75
-    CurrentTimer: 0.7547075
-    Speed: 10
+  - FireTimer: 3
+    CurrentTimer: 1.0238354
+    Speed: 30
     DestroyTime: 2
-    Damage: 25
+    Damage: 1000
     NormalForce: 1500
-    CustomBullet: {fileID: 0}
+    RecoilForce: 25000
+    Spray: 0.029
+    Count: 1
+    CustomBullet: {fileID: 4718605076077215247, guid: 892891ad20a2cbb429937d80697cd7ef, type: 3}

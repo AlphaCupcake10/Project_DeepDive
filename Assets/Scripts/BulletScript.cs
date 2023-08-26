@@ -40,9 +40,9 @@ public class BulletScript : MonoBehaviour
     public void DestroyBullet()
     {
         Destroy(gameObject);
-        if(Trail)Trail.transform.SetParent(Trail.transform.parent.parent);
-        Destroy(Trail,10);
-        Trail = null;
+        if(Trail)Trail.transform.SetParent(null);
+        // Destroy(Trail,10);
+        // Trail = null;
     }
     public void Set(float damage,float normalForce)
     {
