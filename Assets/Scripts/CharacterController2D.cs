@@ -52,6 +52,17 @@ public class CharacterController2D : MonoBehaviour
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
 
+		if(m_slideStarted || crouch)
+		{
+			if (m_CrouchDisableCollider != null)
+			m_CrouchDisableCollider.enabled = false;
+		}
+		else
+		{
+			if (m_CrouchDisableCollider != null)
+			m_CrouchDisableCollider.enabled = true;
+		}
+
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
@@ -113,14 +124,9 @@ public class CharacterController2D : MonoBehaviour
 				// Reduce the speed by the crouchSpeed multiplier
 				move *= m_CrouchSpeed;
 
-				// Disable one of the colliders when crouching
-				if (m_CrouchDisableCollider != null)
-					m_CrouchDisableCollider.enabled = false;
+
 			} else
 			{
-				// Enable the collider when not crouching
-				if (m_CrouchDisableCollider != null)
-					m_CrouchDisableCollider.enabled = true;
 
 				if (m_wasCrouching)
 				{
