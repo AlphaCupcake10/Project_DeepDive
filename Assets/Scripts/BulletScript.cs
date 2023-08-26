@@ -24,10 +24,13 @@ public class BulletScript : MonoBehaviour
             rb.AddForce(contact.normal * -NormalForce);
         }
 
-        GameObject particle = Instantiate(Particle);
-        particle.transform.position = contact.point;
-        particle.transform.up = contact.normal;
-        Destroy(particle,5);
+        if(Particle)
+        {
+            GameObject particle = Instantiate(Particle);
+            particle.transform.position = contact.point;
+            particle.transform.up = contact.normal;
+            Destroy(particle,5);
+        }
         DestroyBullet();
     }
     public void DestroyBullet(float time)

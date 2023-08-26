@@ -7,31 +7,32 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public GameObject shootfrom;
     public GunConfig Main;
-    public float[] timerMain;
 
     void Update()
     {
         for(int i = 0 ; i < Main.FireModes.Length ; i ++)
-            CheckShoot(Main,ref timerMain[i],i);
+            CheckShoot(Main,i);
     }
 
-    void CheckShoot(GunConfig Gun,ref float timer,int mode)
+    void CheckShoot(GunConfig Gun,int mode)
     {
-        if(timer >= Gun.FireModes[mode].FireTimer)
+        if(Gun.FireModes[mode].CurrentTimer >= Gun.FireModes[mode].FireTimer)
         {
             if (Input.GetMouseButton(mode))
             {
                 Shoot(Gun,mode);
-                timer = 0;
+                Gun.FireModes[mode].CurrentTimer = 0;
             }
         }
         else
-            timer += Time.deltaTime;
+            Gun.FireModes[mode].CurrentTimer += Time.deltaTime;
     }
 
     void Shoot(GunConfig Gun,int mode)
     {   
-        GameObject newBullet = Instantiate(bullet, shootfrom.transform.position, Quaternion.identity);
+        GameObject bulletPrefab = Main.FireModes[mode].CustomBullet;
+        if(bulletPrefab == null)bulletPrefab = bullet;
+        GameObject newBullet = Instantiate(bulletPrefab, shootfrom.transform.position, Quaternion.identity);
 
         Rigidbody2D bulletRigidbody = newBullet.GetComponent<Rigidbody2D>();
         if (bulletRigidbody != null)
@@ -45,4 +46,14 @@ public class Shooting : MonoBehaviour
             bulletScript.Set(Gun.FireModes[mode].Damage,Gun.FireModes[mode].NormalForce);
         }
     }
+
+    public void SetGun(GunConfig gun)
+    {
+        Main = gun;
+    }
+    public GunConfig GetGun()
+    {
+        return Main;
+    }
+
 }
