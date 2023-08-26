@@ -75,6 +75,11 @@ public class Enemy : MonoBehaviour
         controller.Move(0, false, false);
       }
     }
+    else if(distance.magnitude < moveThreshold)
+    {
+      animator.SetFloat("speed", 0);
+      controller.Move(0.001f*distance.normalized.x, false, false);
+    }
     else
     {
       animator.SetFloat("speed", 0);

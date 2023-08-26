@@ -137,6 +137,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &8050949775696290402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9031425106201899531}
+  m_Layer: 9
+  m_Name: ShootPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9031425106201899531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8050949775696290402}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.304, y: 0.116, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6083680953275469575}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8645552030826033696
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +182,7 @@ GameObject:
   - component: {fileID: 3540864892059733783}
   - component: {fileID: 8846246070811241421}
   - component: {fileID: 3488084951840450854}
+  - component: {fileID: 2374028983020297245}
   m_Layer: 9
   m_Name: ZombieRanged
   m_TagString: Untagged
@@ -174,6 +206,7 @@ Transform:
   - {fileID: 2452575422596938051}
   - {fileID: 8182146130802750602}
   - {fileID: 8978078077906030853}
+  - {fileID: 9031425106201899531}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1143125964803799593
@@ -294,17 +327,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: {x: 0, y: 0}
-  maxHealth: 100
+  maxHealth: 40
   health: 100
-  animator: {fileID: 0}
-  moveThreshold: 0.48
-  detectionRadius: 10
+  animator: {fileID: 8048094108587561815}
+  moveThreshold: 4
+  detectionRadius: 20
   speed: 20
   isDead: 0
   collisionMask:
     serializedVersion: 2
     m_Bits: 511
-  ehealthbar: {fileID: 0}
+  ehealthbar: {fileID: 2374028983020297245}
 --- !u!114 &3488084951840450854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,11 +351,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 1
-  animator: {fileID: 0}
+  animator: {fileID: 8048094108587561815}
+  damageType: 1
   attackTypes:
-  - ClipName: ZombieAgileRunHit
-    StateName: isRunHit
-  damagePerHit: 20
+  - ClipName: ZombieRangedShoot
+    StateName: isShooting
+  damagePerHit: 5
+  bullet: {fileID: 4718605076077215247, guid: aca90f42f494b8b45983248251cc933d, type: 3}
+  bulletSpeed: 15
+  shootPos: {fileID: 8050949775696290402}
+--- !u!114 &2374028983020297245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645552030826033696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22a3c60dc874ef4f84bd1228721874c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthbar: {fileID: 0}
 --- !u!1 &9139977943436492130
 GameObject:
   m_ObjectHideFlags: 0
