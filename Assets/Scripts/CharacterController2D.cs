@@ -199,4 +199,10 @@ public class CharacterController2D : MonoBehaviour
 	{
 		return m_Rigidbody2D.velocity.x;
 	}
+	void OnDrawGizmosSelected()
+    {
+        // Draw a semitransparent red cube at the transforms position
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawSphere(m_GroundCheck.transform.position,k_GroundedRadius);
+    }
 }
