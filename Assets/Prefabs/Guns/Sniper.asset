@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197bb879e9548384187c7f98860c6086, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
-  graphic: {fileID: 21300000, guid: 15c6866c17e573244985e562f1230313, type: 3}
+  graphic: {fileID: 21300000, guid: 2ab781c20e65e82438466179c699f22b, type: 3}
   zoom: 2
   FireModes:
   - FireTimer: 3
-    CurrentTimer: 1.0238354
+    CurrentTimer: 1.310942
     Speed: 30
     DestroyTime: 2
     Damage: 1000

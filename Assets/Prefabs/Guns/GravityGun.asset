@@ -12,19 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197bb879e9548384187c7f98860c6086, type: 3}
   m_Name: GravityGun
   m_EditorClassIdentifier: 
-  graphic: {fileID: -1055567873, guid: 086b488131f921c48be0592ae6aa8c6d, type: 3}
+  graphic: {fileID: 21300000, guid: f3ebe549b9c61694ea415a25f87c43a1, type: 3}
+  zoom: 1
   FireModes:
   - FireTimer: 0.05
-    CurrentTimer: 0.055655405
+    CurrentTimer: 0.055364102
     Speed: 5
     DestroyTime: 5
     Damage: 0
     NormalForce: 3240
+    RecoilForce: 100
+    Spray: 0
+    Count: 1
     CustomBullet: {fileID: 4718605076077215247, guid: dac9a44247e51ff4e97c3aad2fa72b86, type: 3}
   - FireTimer: 0.05
-    CurrentTimer: 0.054667998
+    CurrentTimer: 0.0592174
     Speed: 10
     DestroyTime: 5
     Damage: 0
     NormalForce: -2700
+    RecoilForce: 100
+    Spray: 0
+    Count: 1
     CustomBullet: {fileID: 4718605076077215247, guid: dac9a44247e51ff4e97c3aad2fa72b86, type: 3}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197bb879e9548384187c7f98860c6086, type: 3}
+  m_Name: AK
+  m_EditorClassIdentifier: 
+  graphic: {fileID: 21300000, guid: 6b02703ebb630e94c866453f794f36d2, type: 3}
+  zoom: 1.2
+  FireModes:
+  - FireTimer: 0.05
+    CurrentTimer: 0.0525986
+    Speed: 10
+    DestroyTime: 2
+    Damage: 10
+    NormalForce: 1500
+    RecoilForce: 1000
+    Spray: 0.016
+    Count: 1
+    CustomBullet: {fileID: 4718605076077215247, guid: aca90f42f494b8b45983248251cc933d, type: 3}

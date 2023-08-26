@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197bb879e9548384187c7f98860c6086, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  graphic: {fileID: 21300000, guid: b986b74fac7a7f24a87d6dbf108e3ac8, type: 3}
+  graphic: {fileID: 21300000, guid: 2ab781c20e65e82438466179c699f22b, type: 3}
+  zoom: 0.9
   FireModes:
   - FireTimer: 1
-    CurrentTimer: 1.0017396
+    CurrentTimer: 1.0057597
     Speed: 10
     DestroyTime: 2
     Damage: 5

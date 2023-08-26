@@ -16,12 +16,12 @@ MonoBehaviour:
   zoom: 1
   FireModes:
   - FireTimer: 0.05
-    CurrentTimer: 0.0573702
+    CurrentTimer: 0.065408796
     Speed: 10
     DestroyTime: 2
     Damage: 5
     NormalForce: 1500
-    RecoilForce: 1000
+    RecoilForce: 0
     Spray: 0.091
     Count: 1
     CustomBullet: {fileID: 4718605076077215247, guid: cda4f44c16002ed41bd735982a74f983, type: 3}
