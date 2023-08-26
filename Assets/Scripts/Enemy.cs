@@ -52,8 +52,6 @@ public class Enemy : MonoBehaviour
 
       Debug.DrawRay(transform.position, distance.normalized * detectionRadius, Color.red);
 
-      print(hit.collider);
-
       if(hit.collider != null)
       {
         if(hit.collider.gameObject.tag == "Player")

@@ -38,8 +38,8 @@ public class BulletScript : MonoBehaviour
     {
         Destroy(gameObject);
         if(Trail)Trail.transform.SetParent(Trail.transform.parent.parent);
-        Trail = null;
         Destroy(Trail,10);
+        Trail = null;
     }
     public void Set(float damage,float normalForce)
     {
