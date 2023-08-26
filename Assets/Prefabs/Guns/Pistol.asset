@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197bb879e9548384187c7f98860c6086, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
+  graphic: {fileID: 21300000, guid: 79ab319e619b2ef41b34fe128615dafd, type: 3}
   FireModes:
   - FireTimer: 1
+    CurrentTimer: 0
     Speed: 10
     DestroyTime: 2
     Damage: 15
     NormalForce: 50
   - FireTimer: 1
+    CurrentTimer: 0
     Speed: 10
     DestroyTime: 2
     Damage: 15

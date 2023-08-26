@@ -12,14 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197bb879e9548384187c7f98860c6086, type: 3}
   m_Name: GravityGun
   m_EditorClassIdentifier: 
+  graphic: {fileID: -1055567873, guid: 086b488131f921c48be0592ae6aa8c6d, type: 3}
   FireModes:
   - FireTimer: 0
+    CurrentTimer: 0
     Speed: 10
     DestroyTime: 5
     Damage: 0
     NormalForce: 50
+    CustomBullet: {fileID: 4718605076077215247, guid: dac9a44247e51ff4e97c3aad2fa72b86, type: 3}
   - FireTimer: 0
+    CurrentTimer: 0
     Speed: 10
     DestroyTime: 5
     Damage: 0
     NormalForce: -25
+    CustomBullet: {fileID: 4718605076077215247, guid: dac9a44247e51ff4e97c3aad2fa72b86, type: 3}
