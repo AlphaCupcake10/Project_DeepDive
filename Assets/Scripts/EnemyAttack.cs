@@ -39,20 +39,20 @@ public class EnemyAttack : MonoBehaviour
 
   void FixedUpdate()
   {
-    RaycastHit2D hit = Physics2D.Raycast(shootPos.transform.position, enemy.distance.normalized, enemy.detectionRadius, enemy.collisionMask);
-    bool canSeePlayer = false;
-    if(hit.collider != null && hit.collider.gameObject == player)
-    {
-      Debug.DrawRay(shootPos.transform.position, enemy.distance.normalized * enemy.detectionRadius, Color.red);
-      canSeePlayer = true;
-    }
-    else
-    {
-      Debug.DrawRay(shootPos.transform.position, enemy.distance.normalized * enemy.detectionRadius, Color.green);
-    }
 
     if(damageType == DamageType.Ranged)
     {
+      RaycastHit2D hit = Physics2D.Raycast(shootPos.transform.position, enemy.distance.normalized, enemy.detectionRadius, enemy.collisionMask);
+      bool canSeePlayer = false;
+      if(hit.collider != null && hit.collider.gameObject == player)
+      {
+        Debug.DrawRay(shootPos.transform.position, enemy.distance.normalized * enemy.detectionRadius, Color.red);
+        canSeePlayer = true;
+      }
+      else
+      {
+        Debug.DrawRay(shootPos.transform.position, enemy.distance.normalized * enemy.detectionRadius, Color.green);
+      }
       if(enemy.distance.magnitude < enemy.detectionRadius && canSeePlayer)
       {
         int randAttackIdx = Random.Range(0, attackTypes.Length);
@@ -105,7 +105,7 @@ public class EnemyAttack : MonoBehaviour
     else
     {
 
-    if(enemy.distance.magnitude < enemy.moveThreshold && canSeePlayer)
+    if(enemy.distance.magnitude < enemy.moveThreshold)
     {
       int randAttackIdx = Random.Range(0, attackTypes.Length);
       if(Time.time - lastAttackTime > attackSpeed)
