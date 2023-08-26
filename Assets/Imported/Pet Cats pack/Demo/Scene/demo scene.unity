@@ -232,7 +232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &249843367
 Animator:
   serializedVersion: 5
@@ -528,7 +528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &462347606
 Animator:
   serializedVersion: 5
@@ -750,6 +750,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901ff3ee856bab44a90c3eade59e059f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start:
+    m_PersistentCalls:
+      m_Calls: []
   trigEvent:
     m_PersistentCalls:
       m_Calls:
@@ -797,7 +800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1665394640
 Animator:
   serializedVersion: 5
@@ -903,7 +906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1879097237
 Animator:
   serializedVersion: 5
@@ -1009,7 +1012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1889498788
 Animator:
   serializedVersion: 5
