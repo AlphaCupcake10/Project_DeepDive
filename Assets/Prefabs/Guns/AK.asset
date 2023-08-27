@@ -19,7 +19,7 @@ MonoBehaviour:
     CurrentTimer: 0.0525986
     Speed: 10
     DestroyTime: 2
-    Damage: 10
+    Damage: 40
     NormalForce: 1500
     RecoilForce: 1000
     Spray: 0.016
