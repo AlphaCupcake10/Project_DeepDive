@@ -5,4 +5,5 @@ public class Dialogue : ScriptableObject
 {
     public string Name;
     public string[] Sentences;
+    public bool isSitting = false;
 }

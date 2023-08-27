@@ -8,6 +8,24 @@ public class NPC : MonoBehaviour
     PlayerMovement player;
     public Animator animator;
     public Dialogue dialogue;
+    public SpriteRenderer image;
+
+    public Sprite stand;
+    public Sprite sit;
+
+    void Start()
+    {
+        if(dialogue.isSitting)
+        {
+            image.sprite = sit;
+        }
+        else
+        {
+            image.sprite = stand;
+        }
+    }
+
+
 
     void Update()
     {
@@ -25,6 +43,11 @@ public class NPC : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetDialogue(Dialogue val)
+    {
+        dialogue = val;
     }
 
     void OnTriggerEnter2D(Collider2D col)

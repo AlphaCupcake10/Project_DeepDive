@@ -50,6 +50,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 540322803785157570}
   dialogue: {fileID: 11400000, guid: 4013cdb5f36f5be499caaa95b658386e, type: 2}
+  image: {fileID: 8364366219919463056}
+  stand: {fileID: -1252474083, guid: fa9bdebad1d940e40ae5c4b38d0a0e35, type: 3}
+  sit: {fileID: -1563217850, guid: fa9bdebad1d940e40ae5c4b38d0a0e35, type: 3}
 --- !u!61 &2360253727864100086
 BoxCollider2D:
   m_ObjectHideFlags: 0
