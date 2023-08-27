@@ -82,7 +82,7 @@ public class CharacterController2D : MonoBehaviour
     }
     void FixedUpdate()
     {
-        transform.rotation = Quaternion.Euler(0,ANGLE,0);
+        transform.rotation = Quaternion.Euler(0,0,ANGLE);
         Move();
     }
 
@@ -124,8 +124,7 @@ public class CharacterController2D : MonoBehaviour
         CheckGroundCeil();
         if(InputCrouch)isCrouching = true;
         Vector2 velocity = RB.velocity;
-
-        if(!isSliding && isCrouching && isGrounded && Mathf.Abs(velocity.x) > MaxVelocity * SlideStartThreshold)
+        if(!isSliding && isCrouching && isGrounded && Mathf.Abs(Vector2.Dot(transform.right,velocity)) > MaxVelocity * SlideStartThreshold)
         {
             isSliding = true;
         }
@@ -141,28 +140,30 @@ public class CharacterController2D : MonoBehaviour
         {
             if(isSliding)
             {    
-                velocity.x *= SlidingSmoothness;
-                if(Mathf.Abs(velocity.x) < MaxVelocity * SlideStopThreshold)
+                float along = Vector2.Dot(transform.right,velocity);
+                along *= SlidingSmoothness;
+                velocity = transform.right * along + transform.up * Vector2.Dot(transform.up,velocity);
+                if(Mathf.Abs(Vector2.Dot(transform.right,velocity)) < MaxVelocity * SlideStopThreshold)
                 {
                     isSliding = false;
                 }
             }
             else if(isCrouching)
             {
-                velocity.x += (MaxVelocity * CrouchSpeedCoef * InputAxis.x - velocity.x)/Smoothing;
+                velocity += (Vector2)transform.right * (MaxVelocity * CrouchSpeedCoef * InputAxis.x - Vector2.Dot(transform.right,velocity))/Smoothing;
             }
             else
             {
-                float TargetVelocity = Mathf.Max(Mathf.Abs(velocity.x),MaxVelocity);//Don't slow down if going fast
-                velocity.x += (TargetVelocity * InputAxis.x - velocity.x)/Smoothing;
+                float TargetVelocity = Mathf.Max(Mathf.Abs(Vector2.Dot(transform.right,velocity)),MaxVelocity);//Don't slow down if going fast
+                velocity += (Vector2)transform.right * (TargetVelocity * InputAxis.x - Vector2.Dot(transform.right,velocity))/Smoothing;
             }
         }
         else//Air Movement
         {
             if(InputAxis.x != 0)//To preserve momentum
             {
-                float TargetVelocity = Mathf.Max(Mathf.Abs(velocity.x),MaxVelocity);//Don't slow down if going fast
-                velocity.x += (TargetVelocity * InputAxis.x - velocity.x)/Smoothing*AirControlCoef;
+                float TargetVelocity = Mathf.Max(Mathf.Abs(Vector2.Dot(transform.right,velocity)),MaxVelocity);//Don't slow down if going fast
+                velocity += (Vector2)transform.right * (TargetVelocity * InputAxis.x - Vector2.Dot(transform.right,velocity))/Smoothing*AirControlCoef;
             }
         }
         jumpTimer += Time.fixedDeltaTime;
@@ -170,18 +171,23 @@ public class CharacterController2D : MonoBehaviour
         {
             if(isSliding)
             {
-                if(Mathf.Abs(velocity.x) <= MaxVelocity * SlideJumpStartThreshold)
+                if(Mathf.Abs(Vector2.Dot(transform.right,velocity)) <= MaxVelocity * SlideJumpStartThreshold)
                 {
                     Events.onSlideJump.Invoke();
-                    velocity.y = Mathf.Sqrt(Mathf.Abs(2*Physics2D.gravity.y*SlideJumpHeight));
-                    velocity.x += (MaxVelocity * SlideJumpSpeedBoost * Mathf.Sign(RB.velocity.x) - velocity.x)/Smoothing;
+                    float along = Vector2.Dot(transform.up,velocity);
+                    along = Mathf.Sqrt(Mathf.Abs(2*Physics2D.gravity.y*SlideJumpHeight));
+                    velocity = (Vector2)(transform.up * along + transform.right * Vector2.Dot(transform.right,velocity));
+                    velocity += (Vector2)transform.right * (MaxVelocity * SlideJumpSpeedBoost * Mathf.Sign(Vector2.Dot(transform.right,velocity)) - Vector2.Dot(transform.right,velocity))/Smoothing;
                     ResetJumpVars();
                 }
             }
             else
             {
                 Events.onJump.Invoke();
-                velocity.y = Mathf.Sqrt(Mathf.Abs(2*Physics2D.gravity.y*JumpHeight));
+                float along = Vector2.Dot(transform.up,velocity);
+                along = Mathf.Sqrt(Mathf.Abs(2*Physics2D.gravity.y*JumpHeight));
+                velocity = (Vector2)(transform.up * along + transform.right * Vector2.Dot(transform.right,velocity));
+                ResetJumpVars();
             }
         }
         RB.velocity = velocity;
