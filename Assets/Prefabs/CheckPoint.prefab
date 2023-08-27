@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9038143975921763475}
   - component: {fileID: 995956512943525488}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6694757058462683318}
   - component: {fileID: 8011611954848382664}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: respawn-anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 2545057036056844833}
   - component: {fileID: 3449264541451303347}
   - component: {fileID: 5828350572476840170}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CheckPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
