@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
 
   void FixedUpdate()
   {
-    if(Mathf.Abs(distance.x) < detectionRadius && Mathf.Abs(distance.x) > moveThreshold)
+    if(distance.magnitude < detectionRadius && distance.magnitude > moveThreshold)
     {
       RaycastHit2D hit = Physics2D.Raycast(transform.position, distance.normalized, detectionRadius, collisionMask);
 
@@ -75,7 +75,7 @@ public class Enemy : MonoBehaviour
         controller.Move(0, false, false);
       }
     }
-    else if(Mathf.Abs(distance.x) < moveThreshold)
+    else if(distance.magnitude < moveThreshold)
     {
       animator.SetFloat("speed", 0);
       controller.Move(0.001f*distance.normalized.x, false, false);

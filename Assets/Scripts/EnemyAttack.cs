@@ -53,7 +53,7 @@ public class EnemyAttack : MonoBehaviour
       {
         Debug.DrawRay(shootPos.transform.position, enemy.distance.normalized * enemy.detectionRadius, Color.green);
       }
-      if(Mathf.Abs(enemy.distance.x) < enemy.detectionRadius && canSeePlayer)
+      if(enemy.distance.magnitude < enemy.detectionRadius && canSeePlayer)
       {
         int randAttackIdx = Random.Range(0, attackTypes.Length);
         if(Time.time - lastAttackTime > attackSpeed)
@@ -105,7 +105,7 @@ public class EnemyAttack : MonoBehaviour
     else
     {
 
-    if(Mathf.Abs(enemy.distance.x) < enemy.moveThreshold)
+    if(enemy.distance.magnitude < enemy.moveThreshold)
     {
       int randAttackIdx = Random.Range(0, attackTypes.Length);
       if(Time.time - lastAttackTime > attackSpeed)
