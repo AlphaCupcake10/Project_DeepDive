@@ -11,11 +11,11 @@ public class BulletScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         ContactPoint2D contact = col.contacts[0];
-        Enemy enemy = col.collider.GetComponent<Enemy>();
-        if(enemy != null)
-        {
-            enemy.TakeDamage(Damage);
-        }
+        // Enemy enemy = col.collider.GetComponent<Enemy>();
+        // if(enemy != null)
+        // {
+        //     enemy.TakeDamage(Damage);
+        // }
 
         Rigidbody2D rb = col.collider.GetComponent<Rigidbody2D>();
 
