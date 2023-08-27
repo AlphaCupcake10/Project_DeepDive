@@ -42,7 +42,7 @@ public class EnemyAttack : MonoBehaviour
 
     if(damageType == DamageType.Ranged)
     {
-      RaycastHit2D hit = Physics2D.Raycast(shootPos.transform.position, enemy.distance.normalized, enemy.detectionRadius, enemy.collisionMask);
+      RaycastHit2D hit = Physics2D.Raycast(shootPos.transform.position, (player.transform.position - shootPos.transform.position).normalized, enemy.detectionRadius, enemy.collisionMask);
       bool canSeePlayer = false;
       if(hit.collider != null && hit.collider.gameObject == player)
       {
