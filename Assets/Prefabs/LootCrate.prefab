@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6937248079743725593}
   - component: {fileID: 5046604130293604469}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ion-Deagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4214890092270139987}
   - component: {fileID: 3977556468539987539}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6963804559024311118}
   - component: {fileID: 1209066763004009133}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Graphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 2570799033061456864}
   - component: {fileID: 3511894406800054652}
   - component: {fileID: 3925170797474363154}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: LootCrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ MonoBehaviour:
   - {x: 0.34786987, y: -0.46622723, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 77008
+  m_InstanceId: 70662
   m_LocalBounds:
     m_Center: {x: 0, y: -0.0062720776, z: 0}
     m_Extent: {x: 0.34786987, y: 0.45995516, z: 0}

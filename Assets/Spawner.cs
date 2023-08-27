@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject[] prefab;
     public int count;
     bool infinite = false;
 
     public float SpawnDelay = 1;
     float CurrentTimer;
     public Vector2 RBForce = Vector2.zero;
+
+    public bool Absolute = false;
 
     void Start()
     {
@@ -36,9 +38,11 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        GameObject Spawned = Instantiate(prefab,transform.position,transform.rotation);
+      GameObject Spawned = null;
+        if(Absolute)
+            Spawned = Instantiate(prefab[Random.Range(0, prefab.Length)],transform.position,transform.rotation);
+        else
+          Spawned = Instantiate(prefab[Random.Range(0, prefab.Length)],transform.position + (Vector3)Random.insideUnitCircle,transform.rotation);
         Spawned.GetComponent<Rigidbody2D>()?.AddForce(RBForce);
     }
-
-
 }
