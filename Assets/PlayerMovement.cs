@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void GetInput()
     {
-        _InputJump = Input.GetButtonDown("Jump");
+        _InputJump = Input.GetButton("Jump");
         _InputCrouch = Input.GetButton("Crouch");
         _InputAxis = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
         if(Input.GetKey(KeyCode.LeftShift))

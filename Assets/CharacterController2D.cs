@@ -24,12 +24,12 @@ public class CharacterController2D : MonoBehaviour
     [Range(.9f,1)] public float SlidingSmoothness = .99f; 
     [Range(0,1)] public float SlideStartThreshold = .7f; 
     [Range(0,1)] public float SlideStopThreshold = .5f; 
-    [Range(0,1)] public float SlideJumpStartThreshold = .7f;
-    [Range(0,2)] public float SlideJumpSpeedBoost = .75f;
+    [Range(0,1)] public float SlideJumpStartThreshold = .8f;
+    [Range(0,8)] public float SlideJumpSpeedBoost = 2f;
     public float SlideJumpHeight = 2;
     public float CayoteTimeMS = 100;
     public float JumpCooldownMS = 500;
-    public float JumpBufferTimeMS = 500;
+    public float JumpBufferTimeMS = 50;
 
     // REFERENCES
     Rigidbody2D RB;
