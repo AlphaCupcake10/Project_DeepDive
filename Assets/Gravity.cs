@@ -20,6 +20,10 @@ public class Gravity : MonoBehaviour
         RB.AddForce(new Vector2(Mathf.Cos((angle+90)*Mathf.Deg2Rad),Mathf.Sin((angle+90)*Mathf.Deg2Rad))*RB.mass*Physics2D.gravity.y);
     }
 
+    public void SetGravityAngle(float val)
+    {
+        angle = val;
+    }
     
     void onDisable()
     {

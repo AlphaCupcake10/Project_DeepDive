@@ -21,7 +21,7 @@ public class CharacterController2D : MonoBehaviour
     [Range(0,1)] public float AirControlCoef = .2f;
     public float JumpHeight = 1;
     [Range(0,1)] public float CrouchSpeedCoef = 0.25f; 
-    [Range(0,1)] public float SlidingSmoothness = .99f; 
+    [Range(.9f,1)] public float SlidingSmoothness = .99f; 
     [Range(0,1)] public float SlideStartThreshold = .7f; 
     [Range(0,1)] public float SlideStopThreshold = .5f; 
     [Range(0,1)] public float SlideJumpStartThreshold = .7f;
@@ -29,6 +29,7 @@ public class CharacterController2D : MonoBehaviour
     public float SlideJumpHeight = 2;
     public float CayoteTimeMS = 100;
     public float JumpCooldownMS = 500;
+    public float JumpBufferTimeMS = 500;
 
     // REFERENCES
     Rigidbody2D RB;
@@ -57,9 +58,7 @@ public class CharacterController2D : MonoBehaviour
     bool isSliding = false;
     bool isCrouching = false;
     float jumpTimer = 0;
-
-    public float ANGLE = 0;
-
+    
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
@@ -76,18 +75,21 @@ public class CharacterController2D : MonoBehaviour
         }
         else
         {
-            Invoke("UpdateJumpBuffer",100/1000);
+            Invoke("UpdateJumpBuffer",JumpBufferTimeMS/1000);
         }
         InputCrouch = _InputCrouch;
     }
     void FixedUpdate()
     {
-        transform.rotation = Quaternion.Euler(0,0,ANGLE);
         Move();
     }
 
     void CheckGroundCeil()
     {
+        isCrouching = Physics2D.OverlapCircle(CeilingCheckPoint.position,CheckRadius,WhatIsGround);
+        
+        if(jumpTimer < JumpCooldownMS/1000)return;
+
         isGrounded = Physics2D.OverlapCircle(GroundCheckPoint.position,CheckRadius,WhatIsGround);
         if(isGrounded && !p_isGrounded)
         {
@@ -108,7 +110,6 @@ public class CharacterController2D : MonoBehaviour
             Invoke("UpdateCayote",CayoteTimeMS/1000);
         }
 
-        isCrouching = Physics2D.OverlapCircle(CeilingCheckPoint.position,CheckRadius,WhatIsGround);
     }
     void UpdateCayote()
     {
@@ -123,8 +124,9 @@ public class CharacterController2D : MonoBehaviour
         // Initialization
         CheckGroundCeil();
         if(InputCrouch)isCrouching = true;
-        Vector2 velocity = RB.velocity;
-        if(!isSliding && isCrouching && isGrounded && Mathf.Abs(Vector2.Dot(transform.right,velocity)) > MaxVelocity * SlideStartThreshold)
+        Vector2 velocity = new Vector2(Vector2.Dot(transform.right,RB.velocity),Vector2.Dot(transform.up,RB.velocity));
+
+        if(!isSliding && isCrouching && isGrounded && Mathf.Abs(velocity.x) > MaxVelocity * SlideStartThreshold)
         {
             isSliding = true;
         }
@@ -140,30 +142,28 @@ public class CharacterController2D : MonoBehaviour
         {
             if(isSliding)
             {    
-                float along = Vector2.Dot(transform.right,velocity);
-                along *= SlidingSmoothness;
-                velocity = transform.right * along + transform.up * Vector2.Dot(transform.up,velocity);
-                if(Mathf.Abs(Vector2.Dot(transform.right,velocity)) < MaxVelocity * SlideStopThreshold)
+                velocity.x *= SlidingSmoothness;
+                if(Mathf.Abs(velocity.x) < MaxVelocity * SlideStopThreshold)
                 {
                     isSliding = false;
                 }
             }
             else if(isCrouching)
             {
-                velocity += (Vector2)transform.right * (MaxVelocity * CrouchSpeedCoef * InputAxis.x - Vector2.Dot(transform.right,velocity))/Smoothing;
+                velocity.x += (MaxVelocity * CrouchSpeedCoef * InputAxis.x - velocity.x)/Smoothing;
             }
             else
             {
-                float TargetVelocity = Mathf.Max(Mathf.Abs(Vector2.Dot(transform.right,velocity)),MaxVelocity);//Don't slow down if going fast
-                velocity += (Vector2)transform.right * (TargetVelocity * InputAxis.x - Vector2.Dot(transform.right,velocity))/Smoothing;
+                float TargetVelocity = Mathf.Max(Mathf.Abs(velocity.x),MaxVelocity);//Don't slow down if going fast
+                velocity.x += (TargetVelocity * InputAxis.x - velocity.x)/Smoothing;
             }
         }
         else//Air Movement
         {
             if(InputAxis.x != 0)//To preserve momentum
             {
-                float TargetVelocity = Mathf.Max(Mathf.Abs(Vector2.Dot(transform.right,velocity)),MaxVelocity);//Don't slow down if going fast
-                velocity += (Vector2)transform.right * (TargetVelocity * InputAxis.x - Vector2.Dot(transform.right,velocity))/Smoothing*AirControlCoef;
+                float TargetVelocity = Mathf.Max(Mathf.Abs(velocity.x),MaxVelocity);//Don't slow down if going fast
+                velocity.x += (TargetVelocity * InputAxis.x - velocity.x)/Smoothing*AirControlCoef;
             }
         }
         jumpTimer += Time.fixedDeltaTime;
@@ -171,26 +171,22 @@ public class CharacterController2D : MonoBehaviour
         {
             if(isSliding)
             {
-                if(Mathf.Abs(Vector2.Dot(transform.right,velocity)) <= MaxVelocity * SlideJumpStartThreshold)
+                if(Mathf.Abs(velocity.x) <= MaxVelocity * SlideJumpStartThreshold)
                 {
                     Events.onSlideJump.Invoke();
-                    float along = Vector2.Dot(transform.up,velocity);
-                    along = Mathf.Sqrt(Mathf.Abs(2*Physics2D.gravity.y*SlideJumpHeight));
-                    velocity = (Vector2)(transform.up * along + transform.right * Vector2.Dot(transform.right,velocity));
-                    velocity += (Vector2)transform.right * (MaxVelocity * SlideJumpSpeedBoost * Mathf.Sign(Vector2.Dot(transform.right,velocity)) - Vector2.Dot(transform.right,velocity))/Smoothing;
+                    velocity.y = Mathf.Sqrt(Mathf.Abs(2*Physics2D.gravity.y*SlideJumpHeight));
+                    velocity.x += (MaxVelocity * SlideJumpSpeedBoost * Mathf.Sign(RB.velocity.x) - velocity.x)/Smoothing;
                     ResetJumpVars();
                 }
             }
             else
             {
                 Events.onJump.Invoke();
-                float along = Vector2.Dot(transform.up,velocity);
-                along = Mathf.Sqrt(Mathf.Abs(2*Physics2D.gravity.y*JumpHeight));
-                velocity = (Vector2)(transform.up * along + transform.right * Vector2.Dot(transform.right,velocity));
+                velocity.y = Mathf.Sqrt(Mathf.Abs(2*Physics2D.gravity.y*JumpHeight));
                 ResetJumpVars();
             }
         }
-        RB.velocity = velocity;
+        RB.velocity = transform.right * velocity.x + transform.up * velocity.y;
     }
     void ResetJumpVars()
     {
@@ -205,5 +201,22 @@ public class CharacterController2D : MonoBehaviour
         Gizmos.color = new Color(1, 1, 0, 0.75F);
         Gizmos.DrawSphere(GroundCheckPoint.position, CheckRadius);
         Gizmos.DrawSphere(CeilingCheckPoint.position, CheckRadius);
+    }
+
+    public bool GetIsGrounded()
+    {
+        return isGroundedCayote;
+    }
+    public bool GetIsCrouching()
+    {
+        return isCrouching;
+    } 
+    public bool GetIsSliding()
+    {
+        return isSliding;
+    }
+    public float GetSpeed()
+    {
+        return Vector2.Dot(transform.right,RB.velocity);
     }
 }
